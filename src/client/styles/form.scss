@@ -1,0 +1,74 @@
+@use 'base';
+$bg-size : 30px;
+$bg-repeat: no-repeat;
+$bg-position: 1px 1px;
+$bg-blend : screen;
+
+form {
+    border: 1px solid #545454;
+    border-radius: 3px;
+    padding: 40px;
+    >input[type="url"] {
+        color :#5863F8;
+        font-weight: bolder;
+        padding-left: 40px;       
+        &:focus {            
+            // removing default focus style
+            outline: 0;
+            // adding new one
+            background: #19647E;
+        }
+        &:valid {
+            background: #19647E;
+            background: url(../img/check.png);
+            background-size: $bg-size;
+            background-repeat: $bg-repeat;
+            background-position: $bg-position ;
+            text-decoration: underline;
+            color: #0a1388;
+            
+        }
+          &:invalid{
+            background: url(../img/error.png);
+            background-size: $bg-size;
+            background-repeat: $bg-repeat;
+            background-position: $bg-position   ;
+            background-blend-mode: $bg-blend;         
+            
+            & ~ .requirements {
+              max-height: 200px;
+              padding: 0 30px 20px 50px;
+              position: static;
+              margin-top: 50px;              
+           
+            }
+          }
+          
+    } .requirements {
+            
+            padding: 0 30px 0 50px;
+            color: #999;
+            max-height: 0;
+            transition: 0.28s;
+            overflow: hidden;
+            color: rgb(179, 5, 5);
+            font-style: italic;
+            font-weight: bolder; 
+          }   
+}
+
+input { 
+    min-width: 90%;
+    height: 50px;
+    margin: 10px 5px;
+    background: #19647E;
+    
+}
+button{
+    height: 45px;
+    border-radius: 15px;
+    width: 95%;
+    margin: 15px 25px;
+    background-color : #16BAC5;
+    opacity: 0.9;
+}

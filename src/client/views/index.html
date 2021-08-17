@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sentiment Analyzer</title>
+    <link type="rel/stylesheet" src ='../styles/style.scss'>
+    <base target="_blank">
+    
+  </head>
+
+  <body>
+   
+    <main> 
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">         
+          <h2>please wait until analyzing process done</h2>
+        </div>
+      
+      </div>      
+   
+      <h1>Sentiment Analyzer</h1>
+      <div class="container">
+        <p>Enter a URL of an article / a blog to discover its sentiment.</p>
+        <section>
+          <form target="_self" id="form" onsubmit="event.preventDefault(); Client.handleSubmit(event)">
+            <label for="article-url">URL</label>
+            
+            <input  id="article-url" type="url" name="input" value="" 
+            oninput="return Client.validateUrl(event)"
+            pattern="(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?"
+            required placeholder="Please enter valid Article URL here" >
+              <div class="requirements">
+                Url must be valid url with (http:// Or https://)
+              </div>
+          </input>
+            
+            <button id= "btnSubmit" type="submit"  class="btn-submit" > Submit </button>            
+          </form>
+        </section>
+</div> 
+        <section id='section-result' class="result-titles hidden">
+          <h2>Analyzer Results:</h2>    
+          <div id="agreement">
+            `<h3> agreement  </h3>
+             <p class='condtional-style' data-status="OBJECTIVE"> DISAGREEMENT  </p>
+          </div>
+          <div id="subjectivity"></div>
+          <div id="confidence">
+            <h3>confidence</h3>
+            <meter min="0" low="95" optimum="100" high="110" max="100"  value="95">95%</meter>
+          </div>
+          <div id="irony"></div>
+          <div id="score_tag"></div>
+        </section>
+      </div>
+
+      <footer class='footer'>
+             
+        <div class='footer-section'>
+           <h2 class='color-second'>my links</h2>
+           <div class="footer-icons">
+            
+            <p><a  href='http://github.com/Ahmed-Elragal/' class="fa fa-github">
+              
+            </a></p>
+            
+            <p><a href='https://www.linkedin.com/in/ahmed-fawzy-elragal/' title="my linkedin" class="fa fa-linkedin">
+              
+            </a></p>
+           <p> <a href='https://www.guru.com/freelancers/ahmed-fawzy-elragal' title="my Guru"class="fa fa-guru">
+              
+            </a></p>
+          </div>
+        </div>
+         <div class='footer-section'> 
+            <h2 class='color-second'>resources</h2> 
+             <div class="footer-icons" >
+                <p><a href='http://www.udacity.com' title="For UDACITY " class="fa ic-udacity">
+                  
+                </a></p>
+                <p><a href='https://webpack.js.org' title="Powered by webpack" class="fa ic-webpack">
+                  
+                </a></p>
+                <p><a href='https://sass-lang.com' title="Powered by SASS" class="fa ic-sass"> 
+                 
+                </a></p>
+            </div>
+          </div> 
+    </footer>
+    </main>
+    <script>
+      // Check that service workers are supported
+      if ('serviceWorker' in navigator) {
+          // Use the window load event to keep the page load performant
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/service-worker.js');
+          });
+      }
+     </script>
+    
+   
+  </body>
+</html>

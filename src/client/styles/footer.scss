@@ -1,0 +1,82 @@
+@import './base.scss';
+  $icon-size :20px;
+  footer {
+    // background: #252525;
+    // color: #e7e7e7;
+    // height: 70px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 20px 20px;
+    border:solid 2px rgb(143, 58, 58);
+    border-radius: 25px;
+    // background-color: $color-primary;   
+    // position:relative; 
+    bottom: 30px;
+    gap: 50px;
+}
+.color-second{
+    margin: 10px;
+}
+.footer-section{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer-icons{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: $icon-size +10px;
+}
+.fa {
+    padding: 20px;
+    // font-size: 24px;
+    width: $icon-size;
+    // text-align: center;
+    // text-decoration: none;
+    // margin: 50px 10px;
+    border-radius: 30%;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  .fa-github { 
+    background: url('../img/icons/github.png') center no-repeat; background-size: 100% 100%;;
+  }
+  .fa-linkedin {
+    background: url('../img/icons/linkedin.png') center no-repeat; background-size: 100% 100%;;
+  }   
+  .fa-guru {
+    background: url('../img/icons/guru.png') center no-repeat; background-size: 100% 100%;;
+  } 
+  .ic-udacity {
+    background: url('../img/icons/udacity.jpg') center no-repeat; background-size: 100% 100%;;
+  } 
+  .ic-webpack {
+    background: url('../img/icons/webpack.jpg') center no-repeat; background-size: 100% 100%;;
+  }
+  .ic-sass {
+    background: url('../img/icons/sass.png') center no-repeat; background-size: 100% 100%;;
+  }  
+  /* .fa-icon {
+    background: #3B5998;
+    // color: white;
+    padding: 20px;
+    font-size: 24px;
+    width: $icon-size;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 30%;
+  }   
+.icon-github{  
+    background: center / cover no-repeat url('../img/icons/github.png') fixed;
+    width: $icon-size;
+    height: $icon-size;
+    border: solid 1px black;
+    border-radius: 5px;
+}
+ */
